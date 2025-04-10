@@ -599,10 +599,11 @@ $(document).ready(function (e) {
 
   function DatePiscers() {
     if ($("#from_date, #to_date").length) {
+      $.datepicker.setDefaults($.datepicker.regional["ru"]);
       $("#from_date, #to_date").datepicker({
         dateFormat: "yy-mm-dd",
         changeMonth: true,
-        changeYear: true,
+        changeYear: true
       });
     }
     if ($("#from_date").length) {
@@ -618,7 +619,7 @@ $(document).ready(function (e) {
       if (fromDate && toDate) {
         let from = new Date(fromDate);
         let to = new Date(toDate);
-        let difference = (to - from) / (1000 * 60 * 60 * 24); // Kunlar farqi
+        let difference = (to - from) / (1000 * 60 * 60 * 24) + 1; // Kunlar farqi
 
         if (difference < 0) {
           $(".den").text(
@@ -675,7 +676,6 @@ $(document).ready(function (e) {
     } else {
       alert(quantityAlert);
     }
-
     const count = touristsArray.length;
     $('input[name="touristsCount"]').val(count);
     $(".tourists_count_number").text(count);
@@ -695,7 +695,7 @@ $(document).ready(function (e) {
     $(".dropdown__menu input[type='checkbox']:checked").each(function () {
       selected.push($(this).val());
     });
-    $("#selected-values").val(selected.join(", "));
+    $("#selected-values").val(selected.join(","));
   });
   $(document).click(function (e) {
     if (!$(e.target).closest(".dropdown__menu").length) {
@@ -849,4 +849,7 @@ $(document).ready(function () {
       textEl.text("Включенные опции");
     }
   });
+  if ($('input[name="phone"]').length) {
+    $('input[name="phone"]').inputmask("+998 (99) 999-99-99");
+  }
 });
