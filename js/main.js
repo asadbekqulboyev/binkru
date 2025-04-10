@@ -599,12 +599,35 @@ $(document).ready(function (e) {
 
   function DatePiscers() {
     if ($("#from_date, #to_date").length) {
-      $.datepicker.setDefaults($.datepicker.regional["ru"]);
+      $.datepicker.setDefaults({
+        closeText: "Закрыть",
+        prevText: "&#x3C;Пред",
+        nextText: "След&#x3E;",
+        currentText: "Сегодня",
+        monthNames: ["Январь","Февраль","Март","Апрель","Май","Июнь",
+        "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
+        monthNamesShort: ["Янв","Фев","Мар","Апр","Май","Июн",
+        "Июл","Авг","Сен","Окт","Ноя","Дек"],
+        dayNames: ["воскресенье","понедельник","вторник","среда","четверг","пятница","суббота"],
+        dayNamesShort: ["вск","пнд","втр","срд","чтв","птн","сбт"],
+        dayNamesMin: ["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],
+        weekHeader: "Нед",
+        dateFormat: "dd.mm.yy", // Ruscha format: КК.ММ.ГГ
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ""
+      });
+      
+
       $("#from_date, #to_date").datepicker({
         dateFormat: "yy-mm-dd",
         changeMonth: true,
-        changeYear: true
+        changeYear: true,
+
       });
+     
+      
     }
     if ($("#from_date").length) {
       $("#from_date").on("change", function () {
