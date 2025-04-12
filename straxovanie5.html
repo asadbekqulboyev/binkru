@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="fonts/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="libs/datepicker/bootstrap-datepicker3.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/straxovanie.css">
 
 </head>
 
@@ -600,24 +602,27 @@
                         <form class="travel-abroad__form d-flex flex-wrap justify-content-between">
                             <div class="form-group form-groupitem select">
                                 <span class="form-group__top block-text">Страна поездки</span>
-                                <select class="form-control" pal>
-                                    <option value="" selected disabled>Выберите страну</option>
-                                    Шенген, Турция, Болгария, Таиланд, США
-                                    <option value="1">Шенген</option>
-                                    <option value="2">Турция</option>
-                                    <option value="3">Болгария</option>
-                                    <option value="4">Таиланд</option>
-                                    <option value="5">США</option>
-                                </select>
+                                <label class="form_input nomination">
+                                    <input type="text" id="selected-values" required="" readonly=""
+                                        placeholder=" Выберите страну " autocomplete="off"
+                                        class="nomination_input form-control">
+                                    <div class="dropdown__menu" style="display: none;">
+                                        <label><input type="checkbox" value="Шенген">Шенген </label>
+                                        <label><input type="checkbox" value="Турция">Турция</label>
+                                        <label><input type="checkbox" value="Болгария">Болгария</label>
+                                        <label><input type="checkbox" value="Таиланд">Таиланд</label>
+                                        <label><input type="checkbox" value="США">США</label>
+                                    </div>
+                                </label>
                                 <div class="block-text form-group__bottom">
                                     Шенген, Турция, Болгария, Таиланд, США
                                 </div>
                             </div>
                             <div class="form-group form-groupitem">
                                 <span class="form-group__top block-text">Даты поездки</span>
-                                <input type="text" class="form-control date_picker" placeholder="Туда">
+                                <input type="date" id="from_date" class="form-control " placeholder="Туда" name="date_from">
                                 <div class="block-text form-group__bottom mobilehide d-flex align-items-center">
-                                    <div class="form-check">
+                                    <div class="form-check ">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                         <label class="form-check-label" for="exampleCheck1">Годовой полис</label>
                                     </div>
@@ -628,8 +633,11 @@
                                 </div>
                             </div>
                             <div class="form-group form-groupitem">
-                                <span class="form-group__top block-text opacity0">Opacity0</span>
-                                <input type="text" class="form-control date_picker" placeholder="Обратно">
+                                <span class="form-group__top block-text">
+                                    <span class="block-text_title">Застраховано:</span>
+                                    <span class="den">0</span> дней
+                                </span>
+                                <input type="date" class="form-control " id="to_date" placeholder="Обратно" name="date_to">
                                 <div class="block-text form-group__bottom mobilehide d-flex align-items-center">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck2">
@@ -641,29 +649,66 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="form-group form-groupitem select select2">
+                            <div class="form-group form-groupitem tourists_count select">
                                 <span class="form-group__top block-text">Туристы</span>
-                                <select class="form-control">
-                                    <option value="" selected disabled>Возраст</option>
-                                    <option>Default select1</option>
-                                    <option>Default select2</option>
-                                    <option>Default select3</option>
-                                </select>
+                                <div class="tourists_count">
+                                    <input type="text" name="tourists_count_text" required readonly="" placeholder="Количество туристов" class=" form-control"> 
+                                    <div class="tourists_count_select">
+                                        <div class="selected_count">
+                                            <label class="selected_count_item">
+                                                <span>Возраст</span>
+                                                <input type="number" required class="input_count">
+                                                <div class="exit_count_item">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="add_new_tourist dropdown">
+                                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                 <img src="images/add_year.svg" alt="add yeaer"> Добавить туриста
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="block-text form-group__bottom mobilehide d-flex align-items-center">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck3">
                                         <label class="form-check-label" for="exampleCheck3">Я не гражданин РФ</label>
                                     </div>
-                                    <button type="button" class="btn questionicon" data-toggle="tooltip"
-                                        data-placement="bottom" title="Info">
+                                    <button type="button" class="btn questionicon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Info">
                                         <i class="fa fa-question-circle" aria-hidden="true"></i>
                                     </button>
                                 </div>
                             </div>
+                            <div class="count_den_lists">
+                                <div class="count_den_content">
+                                    <label class="count_den_item">
+                                        <input type="checkbox">
+                                        <span>30 дней</span>
+                                    </label>
+                                    <label class="count_den_item">
+                                        <input type="checkbox">
+                                        <span>45 дней</span>
+                                    </label>
+                                    <label class="count_den_item">
+                                        <input type="checkbox">
+                                        <span>60 дней</span>
+                                    </label>
+                                    <label class="count_den_item">
+                                        <input type="checkbox">
+                                        <span>90 дней</span>
+                                    </label>
+                                    <label class="count_den_item">
+                                        <input type="checkbox">
+                                        <span>180 дней</span>
+                                    </label>
+                                </div>
+                                   
+                            </div>
                             <div class="block-text form-group__bottom mobileshow">
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck3a">
-                                    <label class="form-check-label" for="exampleCheck3a">Годовой полис</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                    <label class="form-check-label" for="exampleCheck3">Я не гражданин РФ</label>
                                 </div>
                                 <button type="button" class="btn questionicon" data-toggle="tooltip" data-placement="bottom"
                                     title="Info">
@@ -672,8 +717,8 @@
                             </div>
                             <div class="block-text form-group__bottom mobileshow">
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck3b">
-                                    <label class="form-check-label" for="exampleCheck3b">Уже путешествую</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                    <label class="form-check-label" for="exampleCheck3">Я не гражданин РФ</label>
                                 </div>
                                 <button type="button" class="btn questionicon" data-toggle="tooltip" data-placement="bottom"
                                     title="Info">
@@ -682,8 +727,8 @@
                             </div>
                             <div class="block-text form-group__bottom mobileshow">
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck3c">
-                                    <label class="form-check-label" for="exampleCheck3c">Я не гражданин РФ</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                    <label class="form-check-label" for="exampleCheck3">Я не гражданин РФ</label>
                                 </div>
                                 <button type="button" class="btn questionicon" data-toggle="tooltip" data-placement="bottom"
                                     title="Info">
@@ -691,7 +736,7 @@
                                 </button>
                             </div>
                             <div class="order-5">
-                                <button type="button" class="btn btn-calculate">Купить страховку в Шенген</button>
+                                <button type="button" class="btn btn-calculate">Рассчитать страховку</button>
                             </div>
                         </form>
                     </div>

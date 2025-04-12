@@ -64,37 +64,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-.ui-datepicker .ui-state-highlight {
-  background-color: #ff5733;
-  color: #199bc5;
-}
 
-.ui-datepicker .ui-state-active {
-  background-color: #4caf50;
-  color: #199bc5;
-}
-
-.block-text_title {
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 30px;
-  color: #199bc5;
-  font-weight: 700;
-}
-.ui-widget-header {
-  border: 1px solid #dedede;
-  background: #fff;
-  color: #333;
-  font-weight: bold;
-}
-.ui-state-default,
-.ui-widget-content .ui-state-default {
-  border: 1px solid #d8d8d8;
-  background: #fff;
-}
-.ui-corner-all {
-  cursor: pointer;
-}
 .tourists_count.show_select .tourists_count_select {
   transform: translate(0);
   opacity: 1;

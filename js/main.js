@@ -604,30 +604,58 @@ $(document).ready(function (e) {
         prevText: "&#x3C;Пред",
         nextText: "След&#x3E;",
         currentText: "Сегодня",
-        monthNames: ["Январь","Февраль","Март","Апрель","Май","Июнь",
-        "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
-        monthNamesShort: ["Янв","Фев","Мар","Апр","Май","Июн",
-        "Июл","Авг","Сен","Окт","Ноя","Дек"],
-        dayNames: ["воскресенье","понедельник","вторник","среда","четверг","пятница","суббота"],
-        dayNamesShort: ["вск","пнд","втр","срд","чтв","птн","сбт"],
-        dayNamesMin: ["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],
+        monthNames: [
+          "Январь",
+          "Февраль",
+          "Март",
+          "Апрель",
+          "Май",
+          "Июнь",
+          "Июль",
+          "Август",
+          "Сентябрь",
+          "Октябрь",
+          "Ноябрь",
+          "Декабрь",
+        ],
+        monthNamesShort: [
+          "Янв",
+          "Фев",
+          "Мар",
+          "Апр",
+          "Май",
+          "Июн",
+          "Июл",
+          "Авг",
+          "Сен",
+          "Окт",
+          "Ноя",
+          "Дек",
+        ],
+        dayNames: [
+          "воскресенье",
+          "понедельник",
+          "вторник",
+          "среда",
+          "четверг",
+          "пятница",
+          "суббота",
+        ],
+        dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+        dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
         weekHeader: "Нед",
         dateFormat: "dd.mm.yy", // Ruscha format: КК.ММ.ГГ
         firstDay: 1,
         isRTL: false,
         showMonthAfterYear: false,
-        yearSuffix: ""
+        yearSuffix: "",
       });
-      
 
       $("#from_date, #to_date").datepicker({
         dateFormat: "yy-mm-dd",
         changeMonth: true,
         changeYear: true,
-
       });
-     
-      
     }
     if ($("#from_date").length) {
       $("#from_date").on("change", function () {
@@ -875,16 +903,13 @@ $(document).ready(function () {
   if ($('input[type="tel"]').length) {
     $('input[type="tel"]').inputmask("+7 (999) 999-99-99");
   }
-  
 });
-$('.theinsured__form-title .delete').click(function(){
-  $(this).parents('.theinsured__form-item').fadeOut()  
-})
+
 function updateTouristTitles() {
   let count = 1;
-  $('.theinsured__form-item').each(function () {
-    const $title = $(this).find('.theinsured__form-title span').first();
-    if ($title.text().includes('турист')) {
+  $(".theinsured__form-item").each(function () {
+    const $title = $(this).find(".theinsured__form-title span").first();
+    if ($title.text().includes("турист")) {
       $title.text(`${count} турист`);
       count++;
     }
@@ -892,12 +917,13 @@ function updateTouristTitles() {
 }
 
 // Qo‘shish tugmasi
-$(document).on('click', '.theinsured__form-addtourist button', function () {
+$(document).on("click", ".theinsured__form-addtourist button", function () {
   // Faqat turist bloklarini sanaymiz
-  const touristCount = $('.theinsured__form-item .theinsured__form-title span')
-    .filter(function () {
-      return $(this).text().includes('турист');
-    }).length;
+  const touristCount = $(
+    ".theinsured__form-item .theinsured__form-title span"
+  ).filter(function () {
+    return $(this).text().includes("турист");
+  }).length;
 
   const newTouristNumber = touristCount + 1;
 
@@ -926,11 +952,15 @@ $(document).on('click', '.theinsured__form-addtourist button', function () {
     </div>
   `);
 
-  newTourist.insertBefore('.theinsured__form-addtourist');
+  newTourist.insertBefore(".theinsured__form-addtourist");
 });
 
 // O‘chirish
-$(document).on('click', '.removeTouristBtn', function () {
-  $(this).closest('.theinsured__form-item').remove();
+$(document).on("click", ".removeTouristBtn", function () {
+  $(this).closest(".theinsured__form-item").remove();
+  updateTouristTitles();
+});
+$(".theinsured__form-title .delete").click(function () {
+  $(this).parents(".theinsured__form-item").fadeOut();
   updateTouristTitles();
 });
