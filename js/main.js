@@ -880,46 +880,57 @@ $(document).ready(function () {
 $('.theinsured__form-title .delete').click(function(){
   $(this).parents('.theinsured__form-item').fadeOut()  
 })
-let touristCount = 1; 
-$(".theinsured__form-addtourist").on("click", function () {
-  touristCount++;
-  $(this).before(`
+function updateTouristTitles() {
+  let count = 1;
+  $('.theinsured__form-item').each(function () {
+    const $title = $(this).find('.theinsured__form-title span').first();
+    if ($title.text().includes('турист')) {
+      $title.text(`${count} турист`);
+      count++;
+    }
+  });
+}
+
+// Qo‘shish tugmasi
+$(document).on('click', '.theinsured__form-addtourist button', function () {
+  // Faqat turist bloklarini sanaymiz
+  const touristCount = $('.theinsured__form-item .theinsured__form-title span')
+    .filter(function () {
+      return $(this).text().includes('турист');
+    }).length;
+
+  const newTouristNumber = touristCount + 1;
+
+  const newTourist = $(`
     <div class="theinsured__form-item">
       <h3 class="theinsured__form-title">
-        <span>${touristCount} турист</span>
-        <button type="button" class="btn delete_tourist">
+        <span>${newTouristNumber} турист</span>
+        <button type="button" class="btn removeTouristBtn">
           <span class="delete">x Удалить</span>
         </button>
       </h3>
       <div class="theinsured__form-itemsection">
         <div class="form-group">
-          <label>Фамилия <span>, латинскими буквами, как в загранпаспорте</span></label>
+          <label>Фамилия <span>, латинскими буквами</span></label>
           <input type="text" class="form-control" placeholder="IVANOV">
         </div>
         <div class="form-group">
-          <label>Имя <span>, латинскими буквами, как в загранпаспорте</span></label>
+          <label>Имя <span>, латинскими буквами</span></label>
           <input type="text" class="form-control" placeholder="IVAN">
         </div>
         <div class="form-group">
           <label>Дата рождения</label>
-          <input type="date" class="form-control" placeholder="дд.мм.гггг">
+          <input type="date" class="form-control">
         </div>
       </div>
     </div>
   `);
+
+  newTourist.insertBefore('.theinsured__form-addtourist');
 });
 
-// Dinamik qo‘shilgan elementlarga ham ishlashi uchun delegated event ishlatiladi
-$(document).on('click', '.delete_tourist', function () {
+// O‘chirish
+$(document).on('click', '.removeTouristBtn', function () {
   $(this).closest('.theinsured__form-item').remove();
-  // Qo‘shimcha: agar o‘chirganingizdan keyin raqamlarni yangilamoqchi bo‘lsangiz, quyidagi funksiya ishlatiladi
-  updateTouristNumbers();
+  updateTouristTitles();
 });
-
-function updateTouristNumbers() {
-  touristCount = 0;
-  $('.theinsured__form-item').each(function () {
-    touristCount++;
-    $(this).find('.theinsured__form-title span').text(`${touristCount} турист`);
-  });
-}
