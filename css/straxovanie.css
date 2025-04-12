@@ -386,6 +386,7 @@ input[name="tourists_count_text"].active {
   font-weight: 400;
   text-align: center;
   background: #effbff;
+  cursor: pointer;
 }
 .all_turist_btn .all_turist_btn_text_down {
   transform: scale(0);
@@ -423,4 +424,96 @@ input[name="tourists_count_text"].active {
 }
 .content_all_tourist {
   position: relative;
+}
+.calculating-tourist__promocodes {
+  border-bottom: 1px solid #199bc5;
+}
+.calculating-tourist__inner {
+  padding-bottom: 20px;
+}
+.currency_toggle {
+  display: flex;
+  background: #e3f4fb;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 90px;
+  height: 34px;
+  border: 1px solid #b3e4f6;
+  position: relative;
+  margin-left: auto;
+}
+
+/* Yashirin radio tugmalar */
+.currency_toggle input[type="radio"] {
+  display: none;
+}
+
+.currency_option {
+  flex: 1;
+  text-align: center;
+  line-height: 34px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #39a8cc;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 30px;
+}
+
+/* Tanlangan radio tugma uchun label */
+input[type="radio"]:checked + label {
+  background-color: #39a8cc;
+  color: #fff;
+}
+.promocode_tickeds {
+  padding: 24px 22px;
+  border-radius: 16px;
+  background: #e1f8f2;
+  border: 1px solid #d3ebe2;
+  margin-top: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.promocode_tickeds-title {
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 30px;
+  color: #000000;
+  font-weight: 700;
+}
+.promocode_tickeds-item {
+  display: flex;
+  margin-top: 10px;
+  border-radius: 38px;
+  background: #fff;
+}
+.promocode_tickeds-item input {
+  background: #fff;
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: normal;
+  color: #999999;
+  font-weight: 400;
+  border-radius: 38px 0 0 38px;
+  padding: 20px 11px;
+  outline: 0;
+  border:none;
+}
+.promocode_tickeds-item .btn {
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: normal;
+  color: #ffffff;
+  font-weight: 700;
+  background: #33cc66;
+  border-radius: 38px ;
+  padding: 11px  20px;
+  outline: 0;
+  border:none;
+  cursor: pointer;
+}
+.promocode_tickeds_img{
+  position: absolute;
+  right: -11px;
+  top: 8px;
 }

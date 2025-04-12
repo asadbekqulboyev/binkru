@@ -872,7 +872,54 @@ $(document).ready(function () {
       textEl.text("Включенные опции");
     }
   });
-  if ($('input[name="phone"]').length) {
-    $('input[name="phone"]').inputmask("+998 (99) 999-99-99");
+  if ($('input[type="tel"]').length) {
+    $('input[type="tel"]').inputmask("+7 (999) 999-99-99");
   }
+  
 });
+$('.theinsured__form-title .delete').click(function(){
+  $(this).parents('.theinsured__form-item').fadeOut()  
+})
+let touristCount = 1; 
+$(".theinsured__form-addtourist").on("click", function () {
+  touristCount++;
+  $(this).before(`
+    <div class="theinsured__form-item">
+      <h3 class="theinsured__form-title">
+        <span>${touristCount} турист</span>
+        <button type="button" class="btn delete_tourist">
+          <span class="delete">x Удалить</span>
+        </button>
+      </h3>
+      <div class="theinsured__form-itemsection">
+        <div class="form-group">
+          <label>Фамилия <span>, латинскими буквами, как в загранпаспорте</span></label>
+          <input type="text" class="form-control" placeholder="IVANOV">
+        </div>
+        <div class="form-group">
+          <label>Имя <span>, латинскими буквами, как в загранпаспорте</span></label>
+          <input type="text" class="form-control" placeholder="IVAN">
+        </div>
+        <div class="form-group">
+          <label>Дата рождения</label>
+          <input type="date" class="form-control" placeholder="дд.мм.гггг">
+        </div>
+      </div>
+    </div>
+  `);
+});
+
+// Dinamik qo‘shilgan elementlarga ham ishlashi uchun delegated event ishlatiladi
+$(document).on('click', '.delete_tourist', function () {
+  $(this).closest('.theinsured__form-item').remove();
+  // Qo‘shimcha: agar o‘chirganingizdan keyin raqamlarni yangilamoqchi bo‘lsangiz, quyidagi funksiya ishlatiladi
+  updateTouristNumbers();
+});
+
+function updateTouristNumbers() {
+  touristCount = 0;
+  $('.theinsured__form-item').each(function () {
+    touristCount++;
+    $(this).find('.theinsured__form-title span').text(`${touristCount} турист`);
+  });
+}
