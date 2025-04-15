@@ -1219,7 +1219,7 @@ $(document).on("click", function (e) {
 $('.all_content_link').click(function (e) {
   e.preventDefault();
 
-  $('.all_contents-checks').slideToggle();
+  $(this).prev('.all_contents-checks').slideToggle();
 
   $(this).toggleClass('active');
 
