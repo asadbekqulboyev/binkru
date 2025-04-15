@@ -797,7 +797,7 @@
                 <div class="form-group form-groupitem">
                   <span class="form-group__top block-text">Даты поездки</span>
                   <input
-                    type="date"
+                    type="text"
                     id="from_date"
                     class="form-control"
                     placeholder="Туда"
@@ -833,7 +833,7 @@
                     <span class="den">0</span> дней
                   </span>
                   <input
-                    type="date"
+                    type="text"
                     class="form-control"
                     id="to_date"
                     placeholder="Обратно"
@@ -944,6 +944,10 @@
                       <input type="checkbox" />
                       <span>180 дней</span>
                     </label>
+                    <label class="count_den_item">
+                      <input type="checkbox" />
+                      <span>365 дней</span>
+                    </label>
                   </div>
                 </div>
                 <div class="block-text form-group__bottom mobileshow">
@@ -1047,28 +1051,28 @@
                       <i class="fa fa-question-circle" aria-hidden="true"></i>
                     </button>
                     <div class="currency_toggle">
-                      <input type="radio" name="currency" id="euro" checked>
+                      <input type="radio" name="currency" id="euro" value="euro" checked>
                       <label for="euro" class="currency_option">€</label>
-                      <input type="radio" name="currency" id="usd">
+                      <input type="radio" name="currency" id="usd" value="usd">
                       <label for="usd" class="currency_option">$</label>
                     </div>
                   </div>
                   <div class="calculating-tourist__promocodes-itembtns">
                     <label>
                       <input type="radio" hidden name="numbers1" />
-                      <span class="btn">30 000 €</span>
+                      <span class="btn">30 000 <span class="sum_icon">€</span> </span>
                     </label>
                     <label>
                       <input type="radio" hidden name="numbers1" />
-                      <span class="btn">35 000 €</span>
+                      <span class="btn">35 000 <span class="sum_icon">€</span></span>
                     </label>
                     <label>
                       <input type="radio" hidden name="numbers1" />
-                      <span class="btn">50 000 €</span>
+                      <span class="btn">50 000 <span class="sum_icon">€</span></span>
                     </label>
                     <label>
                       <input type="radio" hidden name="numbers1" />
-                      <span class="btn">100 000 €</span>
+                      <span class="btn">100 000 <span class="sum_icon">€</span></span>
                     </label>
                   </div>
                   <div class="slide_content-filter">
@@ -1089,6 +1093,90 @@
                     </button>
                   </div>
                   <div class="promocodes-checks">
+                    <div class="promocodes-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck10a"
+                      />
+                      <label class="form-check-label" for="exampleCheck10a"
+                        >Коронавирус
+                        
+                        </label
+                      >
+                      <button
+                        type="button"
+                        class="btn"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Info toltip"
+                        data-original-title="Info"
+                      >
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="promocodes-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck20a"
+                      />
+                      <label class="form-check-label" for="exampleCheck20a"
+                        >Активный отдых</label
+                      >
+                      <button
+                        type="button"
+                        class="btn"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Info toltip"
+                        data-original-title="Info"
+                      >
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="promocodes-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck30a"
+                      />
+                      <label class="form-check-label" for="exampleCheck30a"
+                        >Горные лыжи/сноуборд</label
+                      >
+                      <button
+                        type="button"
+                        class="btn"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Info toltip"
+                        data-original-title="Info"
+                      >
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="promocodes-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck40a"
+                      />
+                      <label class="form-check-label" for="exampleCheck40a"
+                        >Мопед, мотоцикл</label
+                      >
+                      <button
+                        type="button"
+                        class="btn"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Info toltip"
+                        data-original-title="Info"
+                      >
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="promocodes-checks all_contents-checks">
                     <div class="promocodes-check">
                       <input
                         type="checkbox"
@@ -1171,7 +1259,7 @@
                     </div>
                   </div>
                   <a href="" class="all_content_link">
-                    Показать все  <i class="fas fa-chevron-down"></i>                    
+                  <span>Показать все  </span>  <i class="fas fa-chevron-down"></i>                    
                   </a>
                 </div>
                 <div class="calculating-tourist__promocodes-item">
@@ -1187,18 +1275,32 @@
                     >
                       <i class="fa fa-question-circle" aria-hidden="true"></i>
                     </button>
-                    
                   </div>
-                  <div class="form-group selectleft">
-                    <select class="form-control" pal="">
-                      <option value="" selected="" disabled="">Выберите</option>
-                      <option value="1">Шенген</option>
-                      <option value="2">Турция</option>
-                      <option value="3">Болгария</option>
-                      <option value="4">Таиланд</option>
-                      <option value="5">США</option>
-                    </select>
+                  <div class="custom_select_wrapper form-group selectleft" data-name="select1">
+                    <div class="custom_select_selected form-control">Любительский спорт / активный <br>  отдых</div>
+                    <div class="custom_select_options">
+                      <div class="custom_option" data-value="1">Любительский спорт / активный <br> отдых</div>
+                      <div class="custom_option" data-value="2">Турция</div>
+                      <div class="custom_option" data-value="3">Болгария</div>
+                      <div class="custom_option" data-value="4">Таиланд</div>
+                      <div class="custom_option" data-value="5">США</div>
+                    </div>
                   </div>
+                  
+                  <!-- 2-select -->
+                  <div class="custom_select_wrapper form-group selectleft" data-name="select2">
+                    <div class="custom_select_selected form-control">Проф. спорт и соревнования</div>
+                    <div class="custom_select_options">
+                      <div class="custom_option" data-value="a">Экстремальные туры и походы</div>
+                      <div class="custom_option" data-value="b">Семейный отдых на природе</div>
+                      <div class="custom_option" data-value="c">Горнолыжные курорты с инструктором</div>
+                      <div class="custom_option" data-value="d">Морские круизы для отдыха</div>
+                    </div>
+                  </div>
+
+
+
+
                 </div>
                 <div class="calculating-tourist__promocodes-item">
                   <div class="calculating-tourist__promocodes-title">
@@ -1238,31 +1340,31 @@
                     <div class="calculating-tourist__promocodes-itembtns">
                       <label>
                         <input type="radio" hidden name="otmen" />
-                        <span class="btn">500 € </span>
+                        <span class="btn">500 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="otmen" />
-                        <span class="btn">1000 €</span>
+                        <span class="btn">1000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="otmen" />
-                        <span class="btn">1500 €</span>
+                        <span class="btn">1500 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="otmen" />
-                        <span class="btn">2000 €</span>
+                        <span class="btn">2000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="otmen" />
-                        <span class="btn">2500 €</span>
+                        <span class="btn">2500 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="otmen" />
-                        <span class="btn">3000 €</span>
+                        <span class="btn">3000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="otmen" />
-                        <span class="btn">5000 €</span>
+                        <span class="btn">5000 <span class="sum_icon">€</span></span>
                       </label>
                     </div>
                   </div>
@@ -1285,24 +1387,24 @@
                     >
                       <i class="fa fa-question-circle" aria-hidden="true"></i>
                     </button>
-                  </div>
+                  </div> 
                   <div class="slide_content-filter">
                     <div class="calculating-tourist__promocodes-itembtns">
                       <label>
                         <input type="radio" hidden name="bagaj" />
-                        <span class="btn">500 € </span>
+                        <span class="btn">500 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="bagaj" />
-                        <span class="btn">1000 €</span>
+                        <span class="btn">1000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="bagaj" />
-                        <span class="btn">1500 €</span>
+                        <span class="btn">1500 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="bagaj" />
-                        <span class="btn">2000 €</span>
+                        <span class="btn">2000 <span class="sum_icon">€</span></span>
                       </label>
                     </div>
                   </div>
@@ -1330,19 +1432,19 @@
                     <div class="calculating-tourist__promocodes-itembtns">
                       <label>
                         <input type="radio" hidden name="sluchai" />
-                        <span class="btn">1000 €</span>
+                        <span class="btn">1000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="sluchai" />
-                        <span class="btn">3000 €</span>
+                        <span class="btn">3000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="sluchai" />
-                        <span class="btn">5000 €</span>
+                        <span class="btn">5000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="sluchai" />
-                        <span class="btn">10000 €</span>
+                        <span class="btn">10000 <span class="sum_icon">€</span></span>
                       </label>
                     </div>
                   </div>
@@ -1370,26 +1472,57 @@
                     <div class="calculating-tourist__promocodes-itembtns">
                       <label>
                         <input type="radio" hidden name="grajdanska" />
-                        <span class="btn">10000 €</span>
+                        <span class="btn">10000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="grajdanska" />
-                        <span class="btn">15000 €</span>
+                        <span class="btn">15000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="grajdanska" />
-                        <span class="btn">20000 €</span>
+                        <span class="btn">20000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="grajdanska" />
-                        <span class="btn">30000 €</span>
+                        <span class="btn">30000 <span class="sum_icon">€</span></span>
                       </label>
                       <label>
                         <input type="radio" hidden name="grajdanska" />
-                        <span class="btn">50000 €</span>
+                        <span class="btn">50000 <span class="sum_icon">€</span></span>
                       </label>
                     </div>
                   </div>
+                </div>
+                <div class="calculating-tourist__promocodes-item">
+                  <div class="calculating-tourist__promocodes-title">
+                    <span>Работа и учеба</span>
+                    <button type="button" class="btn" data-toggle="tooltip" data-placement="bottom" title="Info toltip" data-original-title="Info">
+                      <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="promocodes-checks">
+                    <lebel class="promocodes-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck19a" name="exampleCheck19a">
+                      <span class="form-check-label" >Работа на производстве</span>
+                      <button type="button" class="btn" data-toggle="tooltip" data-placement="bottom" title="Info toltip" data-original-title="Info">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                      </button>
+                    </lebel>
+                    <label class="promocodes-check">
+                      <input type="checkbox" name="exampleCheck19s" class="form-check-input" id="">
+                      <span class="form-check-label" >Работа в офисе</span>
+                      <button type="button" class="btn" data-toggle="tooltip" data-placement="bottom" title="Info toltip" data-original-title="Info">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                      </button>
+                    </label>
+                    <label class="promocodes-check">
+                      <input type="checkbox" name="exampleCheck40a" class="form-check-input" >
+                      <span class="form-check-label" >Учеба за границей</span>
+                      <button type="button" class="btn" data-toggle="tooltip" data-placement="bottom" title="Info toltip" data-original-title="Info">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                      </button>
+                    </label>
+                  </div>                  
                 </div>
                 <div class="calculating-tourist__promocodes-item all_filters">
                   <a href="#">
@@ -1418,7 +1551,7 @@
                       <img src="images/alfa.png" alt="image" />
                     </a>
                   </div>
-                  <div class="calculating-tourist__buyleft-price">35 000 €</div>
+                  <div class="calculating-tourist__buyleft-price">35 000 <span class="sum_icon">€</span></div>
                   <div class="promocodes-check">
                     <label class="form-check-label" for="exampleCheck1"
                       >Без франшизы</label

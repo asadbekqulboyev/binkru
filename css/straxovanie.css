@@ -286,7 +286,7 @@ input[name="tourists_count_text"].active {
 }
 .count_den_content {
   width: 100%;
-  max-width: 560px;
+  max-width: 660px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -486,4 +486,7 @@ input[type="radio"]:checked + label {
   position: absolute;
   right: -11px;
   top: 8px;
+}
+.all_contents-checks{
+  display: none;
 }

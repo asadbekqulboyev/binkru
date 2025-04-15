@@ -597,6 +597,269 @@ $(document).ready(function (e) {
     });
   }
 
+  // function DatePiscers() {
+  //   if ($("#from_date, #to_date").length) {
+  //     $.datepicker.setDefaults({
+  //       closeText: "Закрыть",
+  //       prevText: "&#x3C;Пред",
+  //       nextText: "След&#x3E;",
+  //       currentText: "Сегодня",
+  //       monthNames: [
+  //         "Январь",
+  //         "Февраль",
+  //         "Март",
+  //         "Апрель",
+  //         "Май",
+  //         "Июнь",
+  //         "Июль",
+  //         "Август",
+  //         "Сентябрь",
+  //         "Октябрь",
+  //         "Ноябрь",
+  //         "Декабрь",
+  //       ],
+  //       monthNamesShort: [
+  //         "Янв",
+  //         "Фев",
+  //         "Мар",
+  //         "Апр",
+  //         "Май",
+  //         "Июн",
+  //         "Июл",
+  //         "Авг",
+  //         "Сен",
+  //         "Окт",
+  //         "Ноя",
+  //         "Дек",
+  //       ],
+  //       dayNames: [
+  //         "воскресенье",
+  //         "понедельник",
+  //         "вторник",
+  //         "среда",
+  //         "четверг",
+  //         "пятница",
+  //         "суббота",
+  //       ],
+  //       dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+  //       dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  //       weekHeader: "Нед",
+  //       dateFormat: "dd.mm.yy", // Ruscha format: КК.ММ.ГГ
+  //       firstDay: 1,
+  //       isRTL: false,
+  //       showMonthAfterYear: false,
+  //       yearSuffix: "",
+  //     });
+
+  //     $("#from_date, #to_date").datepicker({
+  //       dateFormat: "yy-mm-dd",
+  //       changeMonth: true,
+  //       changeYear: true,
+  //     });
+  //   }
+  //   if ($("#from_date").length) {
+  //     $("#from_date").on("change", function () {
+  //       let minDate = $(this).val();
+  //       $("#to_date").datepicker("option", "minDate", minDate);
+  //     });
+  //   }
+  //   function calculateDays() {
+  //     let fromDate = $("#from_date").val();
+  //     let toDate = $("#to_date").val();
+
+  //     if (fromDate && toDate) {
+  //       let from = new Date(fromDate);
+  //       let to = new Date(toDate);
+  //       let difference = (to - from) / (1000 * 60 * 60 * 24) + 1; // Kunlar farqi
+
+  //       if (difference < 0) {
+  //         $(".den").text(
+  //           "❌ Ошибка: 'Дата окончания' не может быть раньше 'Дата начала'!"
+  //         );
+  //         $("#to_date").val(""); // Xato bo‘lsa 'to_date'ni tozalash
+  //       } else {
+  //         $(".den").text(`${difference}`); // Farqni '.den' ga chiqarish
+  //       }
+  //     }
+  //   }
+  //   if ($("#from_date, #to_date").length) {
+  //     $("#from_date, #to_date").on("change", calculateDays);
+  //   }
+  // }
+  // DatePiscers();
+  // function DatePiscers() {
+  //   // Rus tilida sozlash
+  //   $.datepicker.setDefaults({
+  //     closeText: "Закрыть",
+  //     prevText: "&#x3C;Пред",
+  //     nextText: "След&#x3E;",
+  //     currentText: "Сегодня",
+  //     monthNames: [
+  //       "Январь",
+  //       "Февраль",
+  //       "Март",
+  //       "Апрель",
+  //       "Май",
+  //       "Июнь",
+  //       "Июль",
+  //       "Август",
+  //       "Сентябрь",
+  //       "Октябрь",
+  //       "Ноябрь",
+  //       "Декабрь",
+  //     ],
+  //     monthNamesShort: [
+  //       "Янв",
+  //       "Фев",
+  //       "Мар",
+  //       "Апр",
+  //       "Май",
+  //       "Июн",
+  //       "Июл",
+  //       "Авг",
+  //       "Сен",
+  //       "Окт",
+  //       "Ноя",
+  //       "Дек",
+  //     ],
+  //     dayNames: [
+  //       "воскресенье",
+  //       "понедельник",
+  //       "вторник",
+  //       "среда",
+  //       "четверг",
+  //       "пятница",
+  //       "суббота",
+  //     ],
+  //     dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+  //     dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  //     dateFormat: "dd.mm.yy",
+  //     firstDay: 1,
+  //   });
+
+  //   // Datepickerlarni ulash
+  //   $("#from_date, #to_date").datepicker({
+  //     changeMonth: true,
+  //     changeYear: true,
+  //   });
+
+  //   // Bugungi sanani olish va formatlash
+  //   let today = new Date();
+  //   let dd = String(today.getDate()).padStart(2, "0");
+  //   let mm = String(today.getMonth() + 1).padStart(2, "0");
+  //   let yyyy = today.getFullYear();
+  //   let todayFormatted = `${dd}.${mm}.${yyyy}`;
+
+  //   // from_date ni "Туда - DD.MM.YYYY" qilish
+  //   $("#from_date").val("Туда - " + todayFormatted);
+
+  //   // Sana tanlanganda 'to_date' uchun minDate o‘rnatish
+  //   $("#from_date").on("change", function () {
+  //     let val = $(this).val().replace("Туда - ", "");
+  //     $("#to_date").datepicker("option", "minDate", val);
+  //   });
+
+  //   // Kunlar farqini hisoblash
+  //   function calculateDays() {
+  //     let from = $("#from_date").val().replace("Туда - ", "");
+  //     let to = $("#to_date").val();
+
+  //     if (from && to) {
+  //       let fromDate = $.datepicker.parseDate("dd.mm.yy", from);
+  //       let toDate = $.datepicker.parseDate("dd.mm.yy", to);
+  //       let diff = Math.round((toDate - fromDate) / (1000 * 60 * 60 * 24)) + 1;
+
+  //       if (diff < 0) {
+  //         $(".den").text("❌ Ошибка: 'Обратно' раньше 'Туда'!");
+  //         $("#to_date").val("");
+  //       } else {
+  //         $(".den").text("📅 Кол-во дней: " + diff);
+  //       }
+  //     }
+  //   }
+
+  //   $("#from_date, #to_date").on("change", calculateDays);
+  // }
+  // DatePiscers();
+
+  // function DatePiscers() {
+  //   if ($("#from_date, #to_date").length) {
+  //     $.datepicker.setDefaults({
+  //       closeText: "Закрыть",
+  //       prevText: "&#x3C;Пред",
+  //       nextText: "След&#x3E;",
+  //       currentText: "Сегодня",
+  //       monthNames: [
+  //         "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+  //         "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь",
+  //       ],
+  //       monthNamesShort: [
+  //         "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+  //         "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек",
+  //       ],
+  //       dayNames: [
+  //         "воскресенье", "понедельник", "вторник", "среда",
+  //         "четверг", "пятница", "суббота",
+  //       ],
+  //       dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+  //       dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  //       weekHeader: "Нед",
+  //       dateFormat: "dd.mm.yy",
+  //       firstDay: 1,
+  //       isRTL: false,
+  //       showMonthAfterYear: false,
+  //       yearSuffix: "",
+  //     });
+
+  //     $("#from_date, #to_date").datepicker({
+  //       changeMonth: true,
+  //       changeYear: true,
+  //     });
+
+  //     // Bugungi sana
+  //     let today = new Date();
+  //     let dd = String(today.getDate()).padStart(2, "0");
+  //     let mm = String(today.getMonth() + 1).padStart(2, "0");
+  //     let yyyy = today.getFullYear();
+  //     let todayFormatted = dd + "." + mm + "." + yyyy;
+
+  //     // from_date ga qiymat berish
+  //     $("#from_date").val("Туда - " + todayFormatted);
+
+  //     // minDate ni o'rnatish
+  //     $("#from_date").on("change", function () {
+  //       let fromDateVal = $(this).val().replace("Туда - ", "");
+  //       $("#to_date").datepicker("option", "minDate", fromDateVal);
+  //     });
+
+  //     // Kunlarni hisoblash
+  //     function calculateDays() {
+  //       let fromRaw = $("#from_date").val();
+  //       let toRaw = $("#to_date").val();
+
+  //       if (fromRaw && toRaw) {
+  //         let from = fromRaw.replace("Туда - ", "");
+  //         try {
+  //           let fromDate = $.datepicker.parseDate("dd.mm.yy", from);
+  //           let toDate = $.datepicker.parseDate("dd.mm.yy", toRaw);
+  //           let diff = Math.floor((toDate - fromDate) / (1000 * 60 * 60 * 24)) + 1;
+
+  //           if (diff < 0) {
+  //             $(".den").text("❌ Ошибка: 'Обратно' раньше 'Туда'!");
+  //             $("#to_date").val("");
+  //           } else {
+  //             $(".den").text("📅 Кол-во дней: " + diff);
+  //           }
+  //         } catch (e) {
+  //           $(".den").text("❌ Неверный формат даты");
+  //         }
+  //       }
+  //     }
+
+  //     $("#from_date, #to_date").on("change", calculateDays);
+  //   }
+  // }
+
   function DatePiscers() {
     if ($("#from_date, #to_date").length) {
       $.datepicker.setDefaults({
@@ -644,48 +907,86 @@ $(document).ready(function (e) {
         dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
         dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
         weekHeader: "Нед",
-        dateFormat: "dd.mm.yy", // Ruscha format: КК.ММ.ГГ
+        dateFormat: "dd.mm.yy",
         firstDay: 1,
         isRTL: false,
         showMonthAfterYear: false,
         yearSuffix: "",
       });
 
-      $("#from_date, #to_date").datepicker({
-        dateFormat: "yy-mm-dd",
+      function formatDate(d) {
+        let dd = String(d.getDate()).padStart(2, "0");
+        let mm = String(d.getMonth() + 1).padStart(2, "0");
+        let yyyy = d.getFullYear();
+        return dd + "." + mm + "." + yyyy;
+      }
+
+      let today = new Date();
+      let todayFormatted = formatDate(today);
+
+      // Boshlang'ich qiymatlarni o'rnatish
+      $("#from_date").val("Туда - " + todayFormatted);
+      $("#to_date").val("Обратно - " + todayFormatted);
+
+      // datepicker o'rnatish
+      $("#from_date").datepicker({
         changeMonth: true,
         changeYear: true,
+        onSelect: function (dateText) {
+          $("#from_date").val("Туда - " + dateText);
+          $("#to_date").datepicker("option", "minDate", dateText);
+          calculateDays();
+        },
+        beforeShow: function (input, inst) {
+          setTimeout(function () {
+            $(".ui-datepicker").css("z-index", 9999); // Modalda bo‘lsa yordam beradi
+          }, 0);
+        },
       });
-    }
-    if ($("#from_date").length) {
-      $("#from_date").on("change", function () {
-        let minDate = $(this).val();
-        $("#to_date").datepicker("option", "minDate", minDate);
+
+      $("#to_date").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        onSelect: function (dateText) {
+          $("#to_date").val("Обратно - " + dateText);
+          calculateDays();
+        },
+        beforeShow: function (input, inst) {
+          setTimeout(function () {
+            $(".ui-datepicker").css("z-index", 9999);
+          }, 0);
+        },
       });
-    }
-    function calculateDays() {
-      let fromDate = $("#from_date").val();
-      let toDate = $("#to_date").val();
 
-      if (fromDate && toDate) {
-        let from = new Date(fromDate);
-        let to = new Date(toDate);
-        let difference = (to - from) / (1000 * 60 * 60 * 24) + 1; // Kunlar farqi
+      // Har safar foydalanuvchi o'zgartirsa hisoblash
+      function calculateDays() {
+        let fromVal = $("#from_date").val().replace("Туда - ", "").trim();
+        let toVal = $("#to_date").val().replace("Обратно - ", "").trim();
 
-        if (difference < 0) {
-          $(".den").text(
-            "❌ Ошибка: 'Дата окончания' не может быть раньше 'Дата начала'!"
-          );
-          $("#to_date").val(""); // Xato bo‘lsa 'to_date'ni tozalash
-        } else {
-          $(".den").text(`${difference}`); // Farqni '.den' ga chiqarish
+        if (fromVal && toVal) {
+          try {
+            let fromDate = $.datepicker.parseDate("dd.mm.yy", fromVal);
+            let toDate = $.datepicker.parseDate("dd.mm.yy", toVal);
+            let diff =
+              Math.floor((toDate - fromDate) / (1000 * 60 * 60 * 24)) + 1;
+
+            if (diff < 0) {
+              $(".den").text("0");
+              $("#to_date").val("Обратно - ");
+            } else {
+              $(".den").text(diff);
+            }
+          } catch (e) {
+            $(".den").text("0");
+          }
         }
       }
-    }
-    if ($("#from_date, #to_date").length) {
+
+      // Qo'l bilan yozilsa ham tekshir
       $("#from_date, #to_date").on("change", calculateDays);
     }
   }
+
   DatePiscers();
 
   $(".nomination").click(function (e) {
@@ -802,15 +1103,13 @@ $(document).ready(function () {
       }
     }
 
-    let newItem = `
-            <label class="selected_count_item">
+    let newItem = `<label class="selected_count_item">
                 <span>Возраст</span>
                 <input type="number" required class="input_count"> 
                 <div class="exit_count_item">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
-            </label>
-        `;
+            </label>`;
     $(".selected_count").append(newItem);
 
     updateTouristsCountText();
@@ -829,8 +1128,6 @@ $(document).ready(function () {
   $(document).on("input", ".input_count", function () {
     updateTouristsCountText();
   });
-
-  //   );
   $("input[type=checkbox].form-check-input").change(function () {
     const container = $(this).closest(".promocodes-check");
     const target = container.next(".slide_content-filter");
@@ -905,62 +1202,116 @@ $(document).ready(function () {
   }
 });
 
-function updateTouristTitles() {
-  let count = 1;
-  $(".theinsured__form-item").each(function () {
-    const $title = $(this).find(".theinsured__form-title span").first();
-    if ($title.text().includes("турист")) {
-      $title.text(`${count} турист`);
-      count++;
+$('input[name="currency"]').on("change", function () {
+  if ($(this).val() === "usd") {
+    $(".sum_icon").text("$");
+  } else if ($(this).val() === "euro") {
+    $(".sum_icon").text("€");
+  }
+});
+
+$(document).on("click", function (e) {
+  if (!$(e.target).closest(".tourists_count").length) {
+    $(".show_select input[name='tourists_count_text']").removeClass("active");
+    $(".show_select").removeClass("show_select");
+  }
+});
+$('.all_content_link').click(function (e) {
+  e.preventDefault();
+
+  $('.all_contents-checks').slideToggle();
+
+  $(this).toggleClass('active');
+
+  // Matnni almashtirish
+  let span = $(this).find('span');
+  if ($(this).hasClass('active')) {
+    span.text('Скрыть');
+  } else {
+    span.text('Показать все');
+  }
+});
+// custom select
+$(document).ready(function () {
+  $(".custom_select_wrapper").each(function () {
+    const $select = $(this);
+    const $selected = $select.find(".custom_select_selected");
+    const $options = $select.find(".custom_option");
+
+    $selected.on("click", function () {
+      $(".custom_select_wrapper").not($select).removeClass("open");
+      $select.toggleClass("open");
+    });
+
+    $options.on("click", function () {
+      const text = $(this).text();
+      const value = $(this).data("value");
+
+      $selected.text(text);
+      $select.removeClass("open");
+
+      console.log(`Tanlangan qiymat (${ $select.data("name") }):`, value);
+    });
+  });
+
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".custom_select_wrapper").length) {
+      $(".custom_select_wrapper").removeClass("open");
     }
   });
-}
+});
+// theinsured__form-item
+$(document).ready(function () {
+  function updateTouristTitles() {
+      // .theinsured__form-item larni tanlaymiz, BIRINCHI ELEMENTNI SKIP QILAMIZ
+      $('.theinsured__form-item').slice(1).each(function (index) {
+          $(this).find('.theinsured__form-title span:first').text((index + 1) + ' турист');
+      });
+  }
 
-// Qo‘shish tugmasi
-$(document).on("click", ".theinsured__form-addtourist button", function () {
-  // Faqat turist bloklarini sanaymiz
-  const touristCount = $(
-    ".theinsured__form-item .theinsured__form-title span"
-  ).filter(function () {
-    return $(this).text().includes("турист");
-  }).length;
-
-  const newTouristNumber = touristCount + 1;
-
-  const newTourist = $(`
-    <div class="theinsured__form-item">
-      <h3 class="theinsured__form-title">
-        <span>${newTouristNumber} турист</span>
-        <button type="button" class="btn removeTouristBtn">
-          <span class="delete">x Удалить</span>
-        </button>
-      </h3>
-      <div class="theinsured__form-itemsection">
-        <div class="form-group">
-          <label>Фамилия <span>, латинскими буквами</span></label>
-          <input type="text" class="form-control" placeholder="IVANOV">
-        </div>
-        <div class="form-group">
-          <label>Имя <span>, латинскими буквами</span></label>
-          <input type="text" class="form-control" placeholder="IVAN">
-        </div>
-        <div class="form-group">
-          <label>Дата рождения</label>
-          <input type="date" class="form-control">
-        </div>
+  function createTouristBlock(index) {
+      return $(`
+      <div class="theinsured__form-item">
+          <h3 class="theinsured__form-title">
+              <span>${index} турист</span>
+              <button type="button" class="btn delete-btn">
+                  <span class="delete">x Удалить</span>
+              </button>
+          </h3>
+          <div class="theinsured__form-check">
+              <input type="checkbox" class="form-check-input" id="check${index}">
+              <label class="form-check-label" for="check${index}">Турист является страхователем</label>
+          </div>
+          <div class="theinsured__form-itemsection">
+              <div class="form-group">
+                  <label for="lastName${index}">Фамилия <span>, латинскими буквами, как в загранпаспорте</span></label>
+                  <input type="text" class="form-control" id="lastName${index}" placeholder="IVANOV">
+              </div>
+              <div class="form-group">
+                  <label for="firstName${index}">Имя <span>, латинскими буквами, как в загранпаспорте</span></label>
+                  <input type="text" class="form-control" id="firstName${index}" placeholder="IVAN">
+              </div>
+              <div class="form-group">
+                  <label for="birthDate${index}">Дата рождения</label>
+                  <input type="date" class="form-control" id="birthDate${index}" placeholder="дд.мм.гггг">
+              </div>
+          </div>
       </div>
-    </div>
-  `);
+      `);
+  }
 
-  newTourist.insertBefore(".theinsured__form-addtourist");
-});
+  $('.theinsured__form-addtourist .btn').on('click', function () {
+      const count = $('.theinsured__form-item').length; // avtomatik ravishda index
+      const newBlock = createTouristBlock(count); // raqam shunchaki keyin update qilinadi
+      $('.theinsured__form-addtourist').before(newBlock);
+      updateTouristTitles();
+  });
 
-// O‘chirish
-$(document).on("click", ".removeTouristBtn", function () {
-  $(this).closest(".theinsured__form-item").remove();
-  updateTouristTitles();
-});
-$(".theinsured__form-title .delete").click(function () {
-  $(this).parents(".theinsured__form-item").fadeOut();
+  $(document).on('click', '.delete', function () {
+      $(this).closest('.theinsured__form-item').remove();
+      updateTouristTitles();
+  });
+
+  // Page loadda ham tozalab chiqamiz
   updateTouristTitles();
 });
