@@ -9397,6 +9397,10 @@ transform: rotate(180deg);
     cursor: pointer;
     background: #fff;
     border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-text-stroke: #000;
+
   }
 
   .custom_select_options {
@@ -9405,7 +9409,7 @@ transform: rotate(180deg);
     left: 0;
     right: 0;
     background: white;
-    border: 1px solid #ccc;
+    border: 1px solid transparent;
     border-top: none;
     max-height: 0;
     overflow: hidden;
@@ -9413,10 +9417,14 @@ transform: rotate(180deg);
     z-index: 99;
     border-radius: 0 0 4px 4px;
   }
+  .custom_select_options::-webkit-scrollbar{
+    display: none;
+  }
 
   .custom_select_wrapper.open .custom_select_options {
     max-height: 300px;
     overflow-y: auto;
+    border-color:#cccccc8c
   }
 
   .custom_option {
