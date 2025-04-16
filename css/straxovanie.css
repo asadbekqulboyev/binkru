@@ -399,6 +399,9 @@ input[name="tourists_count_text"].active {
   border-bottom: 1px solid #199bc5;
   max-width: 340px;
 }
+#from_date,#to_date{
+  background: #fff;
+}
 .calculating-tourist__inner {
   padding-bottom: 20px;
 }
