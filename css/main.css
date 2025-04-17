@@ -9401,11 +9401,7 @@ transform: rotate(180deg);
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
-        -webkit-text-stroke: #000;
         margin-right: 20px;
-    
-    
-
   }
 
   .custom_select_options {

@@ -64,7 +64,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-
 .tourists_count.show_select .tourists_count_select {
   transform: translate(0);
   opacity: 1;
@@ -399,8 +398,24 @@ input[name="tourists_count_text"].active {
   border-bottom: 1px solid #199bc5;
   max-width: 340px;
 }
-#from_date,#to_date{
+#from_date,
+#to_date {
   background: #fff;
+}
+.date_wrap {
+  position: relative;
+}
+.date_wrap::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/calendar.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 .calculating-tourist__inner {
   padding-bottom: 20px;
@@ -471,7 +486,7 @@ input[type="radio"]:checked + label {
   border-radius: 38px 0 0 38px;
   padding: 20px 11px;
   outline: 0;
-  border:none;
+  border: none;
 }
 .promocode_tickeds-item .btn {
   font-size: 15px;
@@ -480,17 +495,64 @@ input[type="radio"]:checked + label {
   color: #ffffff;
   font-weight: 700;
   background: #33cc66;
-  border-radius: 38px ;
-  padding: 11px  20px;
+  border-radius: 38px;
+  padding: 11px 20px;
   outline: 0;
-  border:none;
+  border: none;
   cursor: pointer;
 }
-.promocode_tickeds_img{
+.promocode_tickeds_img {
   position: absolute;
   right: -11px;
   top: 8px;
 }
-.all_contents-checks{
+.all_contents-checks {
   display: none;
+}
+.mobilehide.form-group__bottom
+  input[type="checkbox"]:checked
+  ~ .form-check-label {
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.customs_check {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #0099cc;
+  border-radius: 4px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  top: 5px;
+}
+
+.form-check-label {
+  color: #999999;
+  font-weight: 100;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.customs_check input {
+  display: none;
+}
+.form-check {
+  padding-left: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 6px;
+  height: 10px;
+  border: solid #0099cc;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  transition: 0.2s ease;
+}
+.customs_check input:checked + .checkmark {
+  opacity: 1;
 }
