@@ -280,7 +280,7 @@ input[name="tourists_count_text"].active {
 }
 .count_den_lists {
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 0 40px;
   display: none;
 }
 .count_den_content {
@@ -291,7 +291,14 @@ input[name="tourists_count_text"].active {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  position: absolute;
   flex-wrap: wrap;
+  z-index: 2;
+}
+@media (max-width: 1024px) {
+  .count_den_content {
+    position: static;
+  }
 }
 .count_den_content .count_den_item {
   display: flex;
@@ -403,6 +410,7 @@ input[name="tourists_count_text"].active {
   background: #fff;
 }
 .date_wrap {
+  width: 100%;
   position: relative;
 }
 .date_wrap::after {
