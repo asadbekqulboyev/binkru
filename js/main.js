@@ -1174,6 +1174,7 @@ $(document).ready(function () {
 
     $('input[name="tourists_count_text"]').val(newList.join(", "));
   }
+
   // Turist qo‘shish
   $(document).on("click", ".add_new_tourist", function (e) {
     e.preventDefault();
@@ -1190,7 +1191,7 @@ $(document).ready(function () {
 
     let newItem = `<label class="selected_count_item">
                 <span>Возраст</span>
-                <input type="number" required class="input_count"> 
+                <input type="number" required class="input_count" maxlength="2" pattern="\d{2}"> 
                 <div class="exit_count_item">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
@@ -1210,9 +1211,16 @@ $(document).ready(function () {
 
     updateTouristsCountText();
   });
+
   $(document).on("input", ".input_count", function () {
+    let value = $(this).val();
+    // Agar qiymat ikki raqamli bo'lsa, boshqa raqamlarni kiritishga ruxsat bermang
+    if (value.length > 2) {
+      $(this).val(value.slice(0, 2)); // Faqat ikki raqamni olish
+    }
     updateTouristsCountText();
   });
+
   $("input[type=checkbox].form-check-input").change(function () {
     const container = $(this).closest(".promocodes-check");
     const target = container.next(".slide_content-filter");
@@ -1223,6 +1231,7 @@ $(document).ready(function () {
       target.slideUp(); // Unchecked bo‘lsa, yopiladi
     }
   });
+
   $(".calculating-tourist__buy-rightitem.long").each(function () {
     const $container = $(this);
     const $options = $container.find(".options");
@@ -1255,10 +1264,6 @@ $(document).ready(function () {
     });
   });
 
-  //   $('.all_turist_btn').click(function (e) {
-  //     $(this).toggleClass('active');
-  // });
-
   $(".calculating-tourist__buy-rightitems").each(function () {
     let $containr = $(this);
     const $optionse = $containr.find(".calculating-tourist__buy-rightitem");
@@ -1282,6 +1287,7 @@ $(document).ready(function () {
       textEl.text("Включенные опции");
     }
   });
+
   if ($('input[type="tel"]').length) {
     $('input[type="tel"]').inputmask("+7 (999) 999-99-99");
   }

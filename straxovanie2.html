@@ -644,13 +644,12 @@
                     <div class="form-group form-groupitem">
                       <span class="form-group__top block-text">Даты поездки</span>
                       <label class="date_wrap">
+                        <span class="block-text"> Туда - </span>
                         <input
                           type="text"
                           id="from_date"
                           class="form-control"
-                          placeholder="Туда"
                           name="date_from"
-                          readonly
                         />
                       </label>
                       <div
@@ -677,6 +676,34 @@
                           <i class="fa fa-question-circle" aria-hidden="true"></i>
                         </button>
                       </div>
+                      <div class="count_den_lists">
+                        <div class="count_den_content">
+                          <label class="count_den_item">
+                            <input type="checkbox" />
+                            <span>30 дней</span>
+                          </label>
+                          <label class="count_den_item">
+                            <input type="checkbox" />
+                            <span>45 дней</span>
+                          </label>
+                          <label class="count_den_item">
+                            <input type="checkbox" />
+                            <span>60 дней</span>
+                          </label>
+                          <label class="count_den_item">
+                            <input type="checkbox" />
+                            <span>90 дней</span>
+                          </label>
+                          <label class="count_den_item">
+                            <input type="checkbox" />
+                            <span>180 дней</span>
+                          </label>
+                          <label class="count_den_item">
+                            <input type="checkbox" />
+                            <span>365 дней</span>
+                          </label>
+                        </div>
+                      </div>
                     </div>
                     <div class="form-group form-groupitem">
                       <span class="form-group__top block-text">
@@ -684,13 +711,12 @@
                         <span class="den">0</span> дней
                       </span>
                       <div class="date_wrap">
+                        <span class="block-text"> Обратно - </span>
                         <input
                           type="text"
                           class="form-control"
                           id="to_date"
-                          placeholder="Обратно"
                           name="date_to"
-                          readonly
                         />
                       </div>
     
@@ -734,7 +760,13 @@
                           <div class="selected_count">
                             <label class="selected_count_item">
                               <span>Возраст</span>
-                              <input type="number" class="input_count" name="age" />
+                              <input
+                                type="number"
+                                class="input_count"
+                                name="age"
+                                min="0"
+                                max="99"
+                              />
                               <div class="exit_count_item">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                               </div>
@@ -779,34 +811,7 @@
                         </button>
                       </div>
                     </div>
-                    <div class="count_den_lists">
-                      <div class="count_den_content">
-                        <label class="count_den_item">
-                          <input type="checkbox" />
-                          <span>30 дней</span>
-                        </label>
-                        <label class="count_den_item">
-                          <input type="checkbox" />
-                          <span>45 дней</span>
-                        </label>
-                        <label class="count_den_item">
-                          <input type="checkbox" />
-                          <span>60 дней</span>
-                        </label>
-                        <label class="count_den_item">
-                          <input type="checkbox" />
-                          <span>90 дней</span>
-                        </label>
-                        <label class="count_den_item">
-                          <input type="checkbox" />
-                          <span>180 дней</span>
-                        </label>
-                        <label class="count_den_item">
-                          <input type="checkbox" />
-                          <span>365 дней</span>
-                        </label>
-                      </div>
-                    </div>
+    
                     <div class="block-text form-group__bottom mobileshow">
                       <div class="form-check">
                         <input
