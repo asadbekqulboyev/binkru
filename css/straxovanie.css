@@ -499,6 +499,7 @@ input[type="radio"]:checked + label {
   margin-top: 10px;
   border-radius: 38px;
   background: #fff;
+  width: 100%;
 }
 .promocode_tickeds-item input {
   background: #fff;
@@ -510,6 +511,7 @@ input[type="radio"]:checked + label {
   border-radius: 38px 0 0 38px;
   padding: 20px 11px;
   outline: 0;
+  width: 90%;
   border: none;
 }
 .promocode_tickeds-item .btn {
@@ -579,4 +581,17 @@ input[type="radio"]:checked + label {
 }
 .customs_check input:checked + .checkmark {
   opacity: 1;
+}
+.filters {
+  max-width: 320px;
+}
+@media (max-width: 768px) {
+  .filters {
+    width: 100%;
+    max-width: 100%;
+  }
+  .calculating-tourist__promocodes {
+    width: 100%;
+    max-width: 100%;
+  }
 }

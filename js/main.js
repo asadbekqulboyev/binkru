@@ -1271,6 +1271,7 @@ $(document).ready(function () {
     console.log($optionse.length - 1);
 
     if ($optionse.length <= 2) {
+      $optionse.css("box-shadow", "0 0 0  #fff");
       $containr.find(".all_turist_btn").css("visibility", "hidden");
     }
 

@@ -3329,7 +3329,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .calculating-tourist__buyitems {
-  flex: 0 0 calc(74% - 45px);
+  flex: 0 0 calc(100% - 345px);
 }
 
 .calculating-tourist__buy {
@@ -4242,6 +4242,9 @@ footer.footer.straxovanie3 .footer__inner {
   word-wrap: break-word;
 }
 
+.wrapper.straxovanie3 .form-group.selectleft:last-child {
+  margin-bottom: 0;
+}
 .wrapper.straxovanie3 .form-groupitem.select,
 .wrapper.straxovanie3 .form-group.selectleft {
   position: relative;
@@ -9358,7 +9361,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   z-index: 9999;
 }
 .custom_select_selected {
-  padding: 10px 20px 10px 10px;
+  padding: 20px 15px;
   border: 1px solid #ccc;
   cursor: pointer;
   background: #fff;
