@@ -1268,6 +1268,11 @@ $(document).ready(function () {
     let $containr = $(this);
     const $optionse = $containr.find(".calculating-tourist__buy-rightitem");
     $containr.find(".numbers").text($optionse.length - 1);
+    console.log($optionse.length - 1);
+
+    if ($optionse.length <= 2) {
+      $containr.find(".all_turist_btn").css("visibility", "hidden");
+    }
 
     $containr.find(".all_turist_btn").on("click", function (e) {
       $(this).toggleClass("active");
