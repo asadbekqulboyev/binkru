@@ -413,6 +413,22 @@ input[name="tourists_count_text"].active {
   width: 100%;
   position: relative;
 }
+.date_wrap .block-text {
+  position: absolute;
+  left: 15px;
+  top: 12.5px;
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 30px;
+  color: #999999;
+  font-weight: 400;
+}
+.date_wrap input {
+  text-indent: 40px;
+}
+.date_wrap input#to_date {
+  text-indent: 72px;
+}
 .date_wrap::after {
   content: "";
   display: block;

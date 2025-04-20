@@ -791,11 +791,11 @@
                 <div class="form-group form-groupitem">
                   <span class="form-group__top block-text">Даты поездки</span>
                   <label class="date_wrap">
+                    <span class="block-text"> Туда - </span>
                     <input
                       type="text"
                       id="from_date"
                       class="form-control"
-                      placeholder="Туда"
                       name="date_from"
                     />
                   </label>
@@ -858,11 +858,11 @@
                     <span class="den">0</span> дней
                   </span>
                   <div class="date_wrap">
+                    <span class="block-text"> Обратно - </span>
                     <input
                       type="text"
                       class="form-control"
                       id="to_date"
-                      placeholder="Обратно"
                       name="date_to"
                     />
                   </div>
@@ -911,7 +911,8 @@
                             type="number"
                             class="input_count"
                             name="age"
-                            min="0" max="99"
+                            min="0"
+                            max="99"
                           />
                           <div class="exit_count_item">
                             <i class="fa fa-times" aria-hidden="true"></i>
