@@ -9366,14 +9366,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   background: #fff;
   border-radius: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 100%;
   margin-right: 20px;
   line-height: 16px;
   color: #999999;
   font-weight: 400;
+  font-size: 14px;
+  padding: 0px 15px 0 15px;
+  display: flex;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+  height: 56px;
+  line-height: 16px;
+  color: #999999;
+  align-items: center;
 }
 
 .custom_select_options {
