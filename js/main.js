@@ -1,4 +1,8 @@
 $(document).ready(function (e) {
+  $("#from_date, #to_date, input[type='date']").inputmask("99.99.9999", {
+    placeholder: "дд.мм.гггг",
+  });
+
   function addSpacesToNumbers(numbers) {
     return numbers
       .toString()
@@ -237,8 +241,6 @@ $(document).ready(function (e) {
     });
   }
 
-  // tabs
-
   // quick-selection
   var buttons = document.querySelectorAll(".quick-selection .tab__head-link");
 
@@ -466,8 +468,6 @@ $(document).ready(function (e) {
   });
 
   var searchOpen = document.querySelector(".header__search-form");
-  // var searchClose = document.querySelector('.closebtn');
-
   // tooltip
   $('[data-toggle="tooltip"]').tooltip();
 
@@ -597,317 +597,6 @@ $(document).ready(function (e) {
     });
   }
 
-  // function DatePiscers() {
-  //
-  //     $.datepicker.setDefaults({
-  //       closeText: "Закрыть",
-  //       prevText: "&#x3C;Пред",
-  //       nextText: "След&#x3E;",
-  //       currentText: "Сегодня",
-  //       monthNames: [
-  //         "Январь",
-  //         "Февраль",
-  //         "Март",
-  //         "Апрель",
-  //         "Май",
-  //         "Июнь",
-  //         "Июль",
-  //         "Август",
-  //         "Сентябрь",
-  //         "Октябрь",
-  //         "Ноябрь",
-  //         "Декабрь",
-  //       ],
-  //       monthNamesShort: [
-  //         "Янв",
-  //         "Фев",
-  //         "Мар",
-  //         "Апр",
-  //         "Май",
-  //         "Июн",
-  //         "Июл",
-  //         "Авг",
-  //         "Сен",
-  //         "Окт",
-  //         "Ноя",
-  //         "Дек",
-  //       ],
-  //       dayNames: [
-  //         "воскресенье",
-  //         "понедельник",
-  //         "вторник",
-  //         "среда",
-  //         "четверг",
-  //         "пятница",
-  //         "суббота",
-  //       ],
-  //       dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
-  //       dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-  //       weekHeader: "Нед",
-  //       dateFormat: "dd.mm.yy", // Ruscha format: КК.ММ.ГГ
-  //       firstDay: 1,
-  //       isRTL: false,
-  //       showMonthAfterYear: false,
-  //       yearSuffix: "",
-  //     });
-
-  //     $("#from_date, #to_date").datepicker({
-  //       dateFormat: "yy-mm-dd",
-  //       changeMonth: true,
-  //       changeYear: true,
-  //     });
-  //   }
-  //   if ($("#from_date").length) {
-  //     $("#from_date").on("change", function () {
-  //       let minDate = $(this).val();
-  //       $("#to_date").datepicker("option", "minDate", minDate);
-  //     });
-  //   }
-  //   function calculateDays() {
-  //     let fromDate = $("#from_date").val();
-  //     let toDate = $("#to_date").val();
-
-  //     if (fromDate && toDate) {
-  //       let from = new Date(fromDate);
-  //       let to = new Date(toDate);
-  //       let difference = (to - from) / (1000 * 60 * 60 * 24) + 1; // Kunlar farqi
-
-  //       if (difference < 0) {
-  //         $(".den").text(
-  //           "❌ Ошибка: 'Дата окончания' не может быть раньше 'Дата начала'!"
-  //         );
-  //         $("#to_date").val(""); // Xato bo‘lsa 'to_date'ni tozalash
-  //       } else {
-  //         $(".den").text(`${difference}`); // Farqni '.den' ga chiqarish
-  //       }
-  //     }
-  //   }
-  //   if ($("#from_date, #to_date").length) {
-  //     $("#from_date, #to_date").on("change", calculateDays);
-  //   }
-  // }
-  // DatePiscers();
-  // function DatePiscers() {
-  //   // Rus tilida sozlash
-  //   $.datepicker.setDefaults({
-  //     closeText: "Закрыть",
-  //     prevText: "&#x3C;Пред",
-  //     nextText: "След&#x3E;",
-  //     currentText: "Сегодня",
-  //     monthNames: [
-  //       "Январь",
-  //       "Февраль",
-  //       "Март",
-  //       "Апрель",
-  //       "Май",
-  //       "Июнь",
-  //       "Июль",
-  //       "Август",
-  //       "Сентябрь",
-  //       "Октябрь",
-  //       "Ноябрь",
-  //       "Декабрь",
-  //     ],
-  //     monthNamesShort: [
-  //       "Янв",
-  //       "Фев",
-  //       "Мар",
-  //       "Апр",
-  //       "Май",
-  //       "Июн",
-  //       "Июл",
-  //       "Авг",
-  //       "Сен",
-  //       "Окт",
-  //       "Ноя",
-  //       "Дек",
-  //     ],
-  //     dayNames: [
-  //       "воскресенье",
-  //       "понедельник",
-  //       "вторник",
-  //       "среда",
-  //       "четверг",
-  //       "пятница",
-  //       "суббота",
-  //     ],
-  //     dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
-  //     dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-  //     dateFormat: "dd.mm.yy",
-  //     firstDay: 1,
-  //   });
-
-  //   // Datepickerlarni ulash
-  //   $("#from_date, #to_date").datepicker({
-  //     changeMonth: true,
-  //     changeYear: true,
-  //   });
-
-  //   // Bugungi sanani olish va formatlash
-  //   let today = new Date();
-  //   let dd = String(today.getDate()).padStart(2, "0");
-  //   let mm = String(today.getMonth() + 1).padStart(2, "0");
-  //   let yyyy = today.getFullYear();
-  //   let todayFormatted = `${dd}.${mm}.${yyyy}`;
-
-  //   // from_date ni "Туда - DD.MM.YYYY" qilish
-  //   $("#from_date").val("Туда - " + todayFormatted);
-
-  //   // Sana tanlanganda 'to_date' uchun minDate o‘rnatish
-  //   $("#from_date").on("change", function () {
-  //     let val = $(this).val().replace("Туда - ", "");
-  //     $("#to_date").datepicker("option", "minDate", val);
-  //   });
-
-  //   // Kunlar farqini hisoblash
-  //   function calculateDays() {
-  //     let from = $("#from_date").val().replace("Туда - ", "");
-  //     let to = $("#to_date").val();
-
-  //     if (from && to) {
-  //       let fromDate = $.datepicker.parseDate("dd.mm.yy", from);
-  //       let toDate = $.datepicker.parseDate("dd.mm.yy", to);
-  //       let diff = Math.round((toDate - fromDate) / (1000 * 60 * 60 * 24)) + 1;
-
-  //       if (diff < 0) {
-  //         $(".den").text("❌ Ошибка: 'Обратно' раньше 'Туда'!");
-  //         $("#to_date").val("");
-  //       } else {
-  //         $(".den").text("📅 Кол-во дней: " + diff);
-  //       }
-  //     }
-  //   }
-
-  //   $("#from_date, #to_date").on("change", calculateDays);
-  // }
-  // DatePiscers();
-  // function DatePiscers() {
-  //   if ($("#from_date, #to_date").length) {
-  //     $.datepicker.setDefaults({
-  //       closeText: "Закрыть",
-  //       prevText: "&#x3C;Пред",
-  //       nextText: "След&#x3E;",
-  //       currentText: "Сегодня",
-  //       monthNames: [
-  //         "Январь",
-  //         "Февраль",
-  //         "Март",
-  //         "Апрель",
-  //         "Май",
-  //         "Июнь",
-  //         "Июль",
-  //         "Август",
-  //         "Сентябрь",
-  //         "Октябрь",
-  //         "Ноябрь",
-  //         "Декабрь",
-  //       ],
-  //       monthNamesShort: [
-  //         "Янв",
-  //         "Фев",
-  //         "Мар",
-  //         "Апр",
-  //         "Май",
-  //         "Июн",
-  //         "Июл",
-  //         "Авг",
-  //         "Сен",
-  //         "Окт",
-  //         "Ноя",
-  //         "Дек",
-  //       ],
-  //       dayNames: [
-  //         "воскресенье",
-  //         "понедельник",
-  //         "вторник",
-  //         "среда",
-  //         "четверг",
-  //         "пятница",
-  //         "суббота",
-  //       ],
-  //       dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
-  //       dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-  //       weekHeader: "Нед",
-  //       dateFormat: "dd.mm.yy",
-  //       firstDay: 1,
-  //       isRTL: false,
-  //       showMonthAfterYear: false,
-  //       yearSuffix: "",
-  //     });
-
-  //     function formatDate(d) {
-  //       let dd = String(d.getDate()).padStart(2, "0");
-  //       let mm = String(d.getMonth() + 1).padStart(2, "0");
-  //       let yyyy = d.getFullYear();
-  //       return dd + "." + mm + "." + yyyy;
-  //     }
-
-  //     let today = new Date();
-  //     let todayFormatted = formatDate(today);
-
-  //     // Boshlang'ich qiymatlarni o'rnatish
-  //     $("#from_date").val("Туда - " + todayFormatted);
-  //     $("#to_date").val("Обратно - " + todayFormatted);
-
-  //     // datepicker o'rnatish
-  //     $("#from_date").datepicker({
-  //       changeMonth: true,
-  //       changeYear: true,
-  //       onSelect: function (dateText) {
-  //         $("#from_date").val("Туда - " + dateText);
-  //         $("#to_date").datepicker("option", "minDate", dateText);
-  //         calculateDays();
-  //       },
-  //       beforeShow: function (input, inst) {
-  //         setTimeout(function () {
-  //           $(".ui-datepicker").css("z-index", 9999); // Modalda bo‘lsa yordam beradi
-  //         }, 0);
-  //       },
-  //     });
-
-  //     $("#to_date").datepicker({
-  //       changeMonth: true,
-  //       changeYear: true,
-  //       onSelect: function (dateText) {
-  //         $("#to_date").val("Обратно - " + dateText);
-  //         calculateDays();
-  //       },
-  //       beforeShow: function (input, inst) {
-  //         setTimeout(function () {
-  //           $(".ui-datepicker").css("z-index", 9999);
-  //         }, 0);
-  //       },
-  //     });
-
-  //     // Har safar foydalanuvchi o'zgartirsa hisoblash
-  //     function calculateDays() {
-  //       let fromVal = $("#from_date").val().replace("Туда - ", "").trim();
-  //       let toVal = $("#to_date").val().replace("Обратно - ", "").trim();
-
-  //       if (fromVal && toVal) {
-  //         try {
-  //           let fromDate = $.datepicker.parseDate("dd.mm.yy", fromVal);
-  //           let toDate = $.datepicker.parseDate("dd.mm.yy", toVal);
-  //           let diff =
-  //             Math.floor((toDate - fromDate) / (1000 * 60 * 60 * 24)) + 1;
-
-  //           if (diff < 0) {
-  //             $(".den").text("0");
-  //             $("#to_date").val("Обратно - ");
-  //           } else {
-  //             $(".den").text(diff);
-  //           }
-  //         } catch (e) {
-  //           $(".den").text("0");
-  //         }
-  //       }
-  //     }
-
-  //     // Qo'l bilan yozilsa ham tekshir
-  //     $("#from_date, #to_date").on("change", calculateDays);
-  //   }
-  // }
-  // DatePiscers()
   function DatePiscers() {
     if ($("#from_date, #to_date").length) {
       $.datepicker.setDefaults({
@@ -1053,21 +742,21 @@ $(document).ready(function (e) {
       }
 
       // from_date va to_date maydonlarida sana kiritish jarayonida formatlash
-      $("#from_date, #to_date").on("input", function () {
-        let currentVal = $(this).val();
+      // $("#from_date, #to_date").on("input", function () {
+      //   let currentVal = $(this).val();
 
-        // . bilan ajratib sana formatini to'g'rilash
-        let formattedDate = currentVal
-          .replace(/[^0-9]/g, "")
-          .replace(/(\d{2})(\d{2})(\d{2})/, "$1.$2.$3");
-        $(this).val(formattedDate);
+      //   // // . bilan ajratib sana formatini to'g'rilash
+      //   // let formattedDate = currentVal
+      //   //   .replace(/[^0-9]/g, "")
+      //   //   .replace(/(\d{2})(\d{2})(\d{2})/, "$1.$2.$3");
+      //   // $(this).val(formattedDate);
 
-        // Sana formatini to'g'rilash
-        let correctedVal = formatDate(formattedDate);
-        $(this).val(correctedVal); // Sana formatini to'g'irlash
+      //   // Sana formatini to'g'rilash
+      //   let correctedVal = formatDate(formattedDate);
+      //   $(this).val(correctedVal); // Sana formatini to'g'irlash
 
-        calculateDays();
-      });
+      //   calculateDays();
+      // });
     }
   }
 
@@ -1439,10 +1128,10 @@ function formValidation() {
     }
   );
 
-  // Tug‘ilgan sana
-  $("#exampleInputEmail6").on("change input", function () {
-    $(this).toggleClass("is-invalid", !$(this).val());
-  });
+  // // Tug‘ilgan sana
+  // $("#exampleInputEmail6").on("change input", function () {
+  //   $(this).toggleClass("is-invalid", !$(this).val());
+  // });
 }
 
 formValidation();
@@ -1460,6 +1149,17 @@ $("form").on("submit", function (e) {
     e.preventDefault(); // formani jo‘natishni to‘xtatadi
   }
 });
-$("input[type='date']").datepicker({
-  dateFormat: "yy-mm-dd",
+$("input.date_picker").inputmask({
+  alias: "datetime",
+  inputFormat: "dd.mm.yyyy",
+  placeholder: "дд.мм.гггг",
+  showMaskOnHover: false,
+  showMaskOnFocus: true,
+  leapday: "29.02.",
+  min: "01.01.1900",
+  max: "31.12.2099",
+});
+
+$("input.date_picker").datepicker({
+  dateFormat: "dd.mm.yy", 
 });
