@@ -364,6 +364,9 @@ input[name="tourists_count_text"].active {
   background: #effbff;
   cursor: pointer;
 }
+.all_turist_btn.active i {
+  transform: rotate(180deg);
+}
 .all_turist_btn .all_turist_btn_text_down {
   transform: scale(0);
   transition: all 0.2s linear;
@@ -558,7 +561,7 @@ input[type="radio"]:checked + label {
   color: #999999;
   font-weight: 100;
   font-size: 14px;
-  padding-left: 10px;
+  padding-left: 0px;
 }
 .customs_check input {
   display: none;

@@ -3412,7 +3412,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-family: "PTSans Caption Regular";
   font-size: 14px;
   line-height: 1;
-  padding-right: 5px;
+  padding-right: 9px;
 }
 
 .calculating-tourist__buyright-assistance .form-check-label {
