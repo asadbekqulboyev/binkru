@@ -3184,6 +3184,11 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: #e9eff3;
   padding-top: 110px;
 }
+@media (max-width: 480px) {
+  .calculating-tourist {
+    padding-top: 0px !important;
+  }
+}
 
 .calculating-tourist__inner {
   display: flex;
@@ -4189,7 +4194,11 @@ footer.footer.straxovanie3 .footer__inner {
   display: flex;
   align-items: center;
 }
-
+.travel-abroad__form-translate.straxovanie2
+  .form-group__bottom.mobileshow
+  .form-check.first {
+  padding-left: 20px;
+}
 .travel-abroad__form-translate.straxovanie2
   .form-groupitem
   input.form-check-input,
@@ -4212,6 +4221,20 @@ footer.footer.straxovanie3 .footer__inner {
   line-height: 30px;
   padding-left: 10px;
 }
+@media (max-width: 768px) {
+  .travel-abroad__form-translate.straxovanie2
+    .form-groupitem
+    label.form-check-label,
+  .travel-abroad__form-translate.straxovanie2
+    .form-group__bottom.mobileshow
+    label.form-check-label {
+    font-family: "PTSans Caption Regular";
+    font-size: 15px;
+    color: #000000;
+    line-height: 30px;
+    padding-left: 10px;
+  }
+}
 
 .travel-abroad__form-translate.straxovanie2 .form-groupitem button.questionicon,
 .travel-abroad__form-translate.straxovanie2
@@ -4233,6 +4256,19 @@ footer.footer.straxovanie3 .footer__inner {
 
 .travel-abroad__form-translate.straxovanie2 .form-group__bottom.mobileshow {
   display: none;
+}
+.travel-abroad__form-translate.straxovanie2
+  .form-group__bottom
+  .block-text.first {
+  display: none;
+}
+@media (max-width: 768px) {
+  .travel-abroad__form-translate.straxovanie2
+    .form-group__bottom
+    .block-text.mobileshow.first {
+    display: flex;
+    padding-left: 0;
+  }
 }
 
 .wrapper.straxovanie3 .form-group.selectleft select {

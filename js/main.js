@@ -1164,3 +1164,18 @@ $("input.date_picker").datepicker({
   yearRange: "1900:2099",
 });
 
+$(".form-group__bottom.mobileshow input").change(function () {
+  if ($(".form-group__bottom.mobileshow input").is(":checked")) {
+    $(this).closest(".form-group__bottom.mobileshow").addClass("openshow");
+    $(this)
+      .closest(".form-group__bottom.mobileshow")
+      .next(".count_den_lists")
+      .slideDown();
+  } else {
+    $(this).closest(".form-group__bottom.mobileshow").removeClass("openshow");
+    $(this)
+      .closest(".form-group__bottom.mobileshow")
+      .next(".count_den_lists")
+      .slideUp();
+  }
+});
