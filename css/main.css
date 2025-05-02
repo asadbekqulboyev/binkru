@@ -3231,6 +3231,11 @@ input[type="range"]::-webkit-slider-thumb {
   border-color: #199bc5;
   display: none;
 }
+@media (max-width: 768px) {
+  .calculating-tourist__promocodes-item .addoptions {
+    border-color: transparent;
+  }
+}
 
 .calculating-tourist__promocodes-item .promocodesbtn span {
   font-family: "PTSans Caption Bold";
@@ -3258,6 +3263,14 @@ input[type="range"]::-webkit-slider-thumb {
   height: 2px;
   position: absolute;
   left: 0;
+}
+@media (max-width: 768px) {
+  .calculating-tourist__promocodes-item:first-child::after {
+    display: none;
+  }
+  .calculating-tourist__promocodes-item:first-child span {
+    display: none;
+  }
 }
 .calculating-tourist__promocodes-title button,
 .calculating-tourist__promocodes-item .promocodes-check button {
@@ -4301,7 +4314,11 @@ footer.footer.straxovanie3 .footer__inner {
   top: 45%;
   transform: translateY(-45%);
 }
-
+@media (max-width: 768px) {
+  .wrapper.straxovanie3 .form-groupitem.select::after {
+    top: 70px;
+  }
+}
 .wrapper.straxovanie3 .form-group.selectleft::after {
   position: absolute;
   content: "";

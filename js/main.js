@@ -841,9 +841,15 @@ $(document).ready(function (e) {
 });
 $(".form-group.form-groupitem #exampleCheck1").on("change", function () {
   if ($(this).is(":checked")) {
-    $(".count_den_lists").slideDown();
+    $(this)
+      .parents(".form-group.form-groupitem")
+      .children(".count_den_lists")
+      .slideDown();
   } else {
-    $(".count_den_lists").slideUp();
+    $(this)
+      .parents(".form-group.form-groupitem")
+      .children(".count_den_lists")
+      .slideUp();
   }
 });
 $(document).ready(function () {
